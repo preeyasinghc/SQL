@@ -31,11 +31,9 @@ SELECT * from film WHERE length >= 'max' AND  'min';
 SELECT AVG( length ) FROM film;
 
 #8. What's the average movie duration expressed in format (hours, minutes)?
-SELECT AVG( length ) FROM film where length = 'HH:MI:SS';
-SELECT convert(date_add('2023-02-19', interval 115 minute), time);
+SELECT AVG(length) FROM film;
+SELECT AVG(LENGTH),CONCAT(FLOOR(115.2720/60),'h ', MOD(115.2720,60),'m') AS AverageMovieDuration FROM FILM;
 
-##CONCAT(FLOOR(minutes/60),'h ', MOD(minutes,60),'m');
-	
 #9. How many movies longer than 3 hours?
 SELECT count(film_id) from film where length >= '180';
 
