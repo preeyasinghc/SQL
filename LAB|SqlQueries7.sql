@@ -51,4 +51,9 @@ SELECT * FROM FILM;
 SELECT rating, avg(length) AS mean	
 	FROM FILM	
 	GROUP BY rating
-    HAVING COUNT(LENGTH) >= 120;
+    HAVING avg(LENGTH) >= 120;
+    ##OR having mean >120 as we can use the alias directly. 
+    SELECT rating, avg(length) AS mean	
+	FROM FILM	
+	GROUP BY rating
+    HAVING mean > 120;
